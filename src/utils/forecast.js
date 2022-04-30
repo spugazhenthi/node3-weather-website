@@ -13,10 +13,12 @@ const getforecast = (latitude,langitude,callback)=>{
     }
   else
   {
+    console.log(response.body.current)
       const data = {
           temperature : response.body.current.temperature,
           description : response.body.current.weather_descriptions[0],
-          feelslike : response.body.current.feelslike        
+          feelslike : response.body.current.feelslike,
+          humidity : response.body.current.humidity        
       }
       
       callback(undefined,data)
